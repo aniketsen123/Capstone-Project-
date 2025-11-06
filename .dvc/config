@@ -1,0 +1,8 @@
+[core]
+    remote = myremote
+[cache]
+    dir = ../DVC_value
+['remote "mylocal"']
+    url = ../local_s3
+['remote "myremote"']
+    url = ../DVC_value
