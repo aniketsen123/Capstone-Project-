@@ -31,8 +31,20 @@ warnings.filterwarnings("ignore")
 
 # Below code block is for local use
 # -------------------------------------------------------------------------------------
+# mlflow.set_tracking_uri('https://dagshub.com/aniketsen123/Capstone-Project-.mlflow')
+# dagshub.init(repo_owner='aniketsen123', repo_name='Capstone-Project-', mlflow=True)
+dagshub_token = os.getenv("CAPSTONE_TEST")
+if not dagshub_token:
+    raise EnvironmentError("CAPSTONE_TEST environment variable is not set")
+
+os.environ["MLFLOW_TRACKING_USERNAME"] = dagshub_token
+os.environ["MLFLOW_TRACKING_PASSWORD"] = dagshub_token
+
+dagshub_url = "https://dagshub.com"
+repo_owner = "aniketsen123"
+repo_name = "Capstone-Project-"
+# Set up MLflow tracking URI
 mlflow.set_tracking_uri('https://dagshub.com/aniketsen123/Capstone-Project-.mlflow')
-dagshub.init(repo_owner='aniketsen123', repo_name='Capstone-Project-', mlflow=True)
 # -------------------------------------------------------------------------------------
 
 
